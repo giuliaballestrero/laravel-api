@@ -89,8 +89,14 @@ class ProjectController extends Controller
         $newProject = new Project();
         $newProject->fill($data);
         $newProject->save();
-        $newProject->technologies()->sync($data['technologies']);
 
+        //faccio un controllo per la checkbox nel caso non ci fossero input selezionati
+        if (isset($data['technologies'])) {
+            $newProject->technologies()->sync($data['technologies']);
+        } else {
+            $newProject->technologies()->sync([]);
+        }
+       
         //ritorno all'index
         return redirect()->route('admin.projects.index')->with('message', "Project $newProject->title has been created!")->with('alert-type', 'success');
     }
@@ -158,9 +164,14 @@ class ProjectController extends Controller
 
         //aggiorno i dati
         $project->update($data);
-        $project->technologies()->sync($data['technologies']);
         
-
+        //faccio un controllo per la checkbox nel caso non ci fossero input selezionati
+        if (isset($data['technologies'])) {
+            $project->technologies()->sync($data['technologies']);
+        } else {
+            $project->technologies()->sync([]);
+        }
+        
         //ritorno sulla show
         return redirect()->route('admin.projects.show', compact('project'))->with('message', "$project->title has been edited")->with('alert-type', 'success');
     }
