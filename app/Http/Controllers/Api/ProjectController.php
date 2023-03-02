@@ -22,6 +22,9 @@ class ProjectController extends Controller
 
     public function show (Project $project) { //uso la dependency injection
 
+        //findorfail sull'id del progetto da mostrare
+        $project = Project::with('type','technologies')->findOrFail($project->id);
+
         //la risposta mi restituisce il project da visualizzare in formato json
         return response()->json([
             'success' => true,
