@@ -11,7 +11,7 @@
             </div>
         @endif
 
-        <h1 class="pt-5 text-center">{{ Auth::user()->name }} Projects</h1>
+        <h1 class="pt-5 text-center tracking-in-contract">{{ Auth::user()->name }} Projects</h1>
 
         <div class="pt-3 d-flex justify-content-between">
             <a class="btn btn-danger rounded-circle" href="{{ route('projects.trash') }}">

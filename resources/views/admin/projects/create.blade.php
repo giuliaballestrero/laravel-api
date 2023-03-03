@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-3 pt-5 text-center">
+    <h1 class="mb-3 pt-5 text-center tracking-in-contract">
         Create a new post from <span class="fw-semibold">{{ Auth::user()->name }} </span>
     </h1>
 

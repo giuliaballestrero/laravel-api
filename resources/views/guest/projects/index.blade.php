@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-5">
 
-    <h1 class="mb-5 text-center text-light bg-dark">
+    <h1 class="mb-5 text-center text-light bg-dark tracking-in-contract">
         Last Projects
     </h1>
 

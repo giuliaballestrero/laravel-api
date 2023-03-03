@@ -25,6 +25,10 @@ main {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         border-radius: 30px 30px;
 
+        img {
+            border-radius: 30px;
+        }
+
         h2 {
             border-bottom: 1px solid #aba9ee;
         }
@@ -92,4 +96,40 @@ main {
         border: #fff !important;
     }
 
-}
+    /***********ANIMATIONS************/
+
+    //aggiungo un'animazione per i titoli in h1//
+    .tracking-in-contract {
+        -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+ @-webkit-keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  
+  }
+  
