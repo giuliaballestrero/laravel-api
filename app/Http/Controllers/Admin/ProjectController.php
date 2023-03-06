@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -49,8 +50,15 @@ class ProjectController extends Controller
 
     public function index()
     {
-        $projects = Project::orderBy('creation_date', 'DESC')->paginate(10);
+        //creo un if per determinare se l'utente ha il ruolo necessario (es. 1 - amministratore) ad accedere ai progetti
+        if (Auth::user()->roles()->pluck('id')->contains(1)) {
+                $projects = Project::orderBy('creation_date', 'DESC')->paginate(10);
+            } else {
+                $projects = Project::where('user_id', Auth::user()->id)->orderBy('creation_date', 'DESC')->paginate(10);
+            }
+        
         return view('admin.projects.index', compact('projects'));
+        
     }
 
     /**
