@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pb-5">
+<div class="container">
     <!--Aggiungo un if session per i messaggi di conferma azioni-->
     @if (session('message'))
         <div class=" mt-5 alert alert-{{ session('alert-type') }}">
-            {{ session('message')}}
+                {{ session('message')}}
         </div>
     @endif
 
-    <h1 class="py-5 text-center"> 
-        Projects in {{$type->name}} type
+    <h1 class="text-center py-5"> 
+        Projects in {{$technology->name}} Technology
     </h1> 
 
-    @foreach ($type->projects as $project)
+    @foreach ($technology->projects as $project)
         
 
     <div class="card text-center mb-4">
@@ -33,15 +33,14 @@
                 Type: <a class="btn btn-disabled rounded-pill fw-bold ms-2" style="background-color: {{$project->type->color}}">{{$project->type->name}}<a>
             </p>
 
-            {{--Per oogni progetto mostro i tag delle categorie--}}
+            {{--Per oogni progetto mostro i tag delle tecnologie--}}
             <div class="pb-4">
                 <span class="fw-bold me-2">Made with (&hearts;): </span>
                 @foreach ($project->technologies as $technology )
-                   <a class="btn btn-disabled rounded-pill fw-bold me-2" style="background-color: {{$technology->bg_color}}">#{{$technology->name}}</a> 
+                   <a class="btn btn-disabled rounded-pill fw-bold me-2" style="background-color: {{$technology->bg_color}}" style="color: {{$technology->text_color}}">#{{$technology->name}}</a> 
                 @endforeach
             </div>
         </div>
-
         <div class="card-footer text-muted">
             Created on {{ $project->creation_date }} - Proj. id: {{ $project->slug }}
         </div>
