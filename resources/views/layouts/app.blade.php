@@ -46,6 +46,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('admin.projects.index')}}">{{ __('Projects') }}</a>
                             </li>
+                            <!-- Aggiungo il collegamento all'index dei types -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.types.index')}}">{{ __('Types') }}</a>
+                            </li>
+
+                            <!-- Aggiungo il collegamento all'index delle technologies -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.technologies.index')}}">{{ __('Technologies') }}</a>
+                            </li>
+
                         </ul>
 
                         <!-- Right Side Of Navbar -->

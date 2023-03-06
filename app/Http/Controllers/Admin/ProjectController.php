@@ -122,7 +122,7 @@ class ProjectController extends Controller
      * @param  int  Project $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project) //Uso la dependency injection al posto di passare l'id e fare find or fail
+    public function edit(Project $project) //Uso la dependency injection al projecto di passare l'id e fare find or fail
     {
         return view('admin.projects.edit', compact('project'), ['types'=> Type::all(), 'technologies' => Technology::all()]);
     }
@@ -221,4 +221,5 @@ class ProjectController extends Controller
         //ritorno alla index
         return redirect()->route('admin.projects.index')->with('message', "Project has been permamently deleted")->with('alert-type', 'success');
     }
+
 }

@@ -12,7 +12,7 @@ class Type extends Model
     protected $fillable = ['name', 'color' ];
 
     //definisco la relaizone one to many (tanti projects dipendono da un type)
-    public function types(){
-        return $this->hasMany(Type::class);
+    public function projects(){
+        return $this->hasMany(Project::class);
     }
 }
