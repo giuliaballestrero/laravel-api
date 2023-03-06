@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GuestProjectController::class, 'index'])->name('guest.index');
+Route::get('/', [GuestProjectController::class, 'index'])->name('guests.index');
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');

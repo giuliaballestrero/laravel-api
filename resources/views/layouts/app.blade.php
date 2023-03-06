@@ -39,21 +39,21 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                                <a class="nav-link {{(Route::current()->getName()== 'guests.index') ? 'active' : ''}}" href="{{url('/') }}">{{ __('Home') }}</a>
                             </li>
 
                             <!-- Aggiungo il collegamento all'index dei progetti -->
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.projects.index')}}">{{ __('Projects') }}</a>
+                                <a class="nav-link {{(str_starts_with(Route::current()->getName(), 'admin.projects')) ? 'active' : ''}}" href="{{route('admin.projects.index')}}">{{ __('Projects') }}</a>
                             </li>
                             <!-- Aggiungo il collegamento all'index dei types -->
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.types.index')}}">{{ __('Types') }}</a>
+                                <a class="nav-link {{(Route::current()->getName()== 'admin.types.index') ? 'active' : ''}}" href="{{route('admin.types.index')}}">{{ __('Types') }}</a>
                             </li>
 
                             <!-- Aggiungo il collegamento all'index delle technologies -->
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.technologies.index')}}">{{ __('Technologies') }}</a>
+                                <a class="nav-link {{(Route::current()->getName()== 'admin.technologies.index') ? 'active' : ''}}" href="{{route('admin.technologies.index')}}">{{ __('Technologies') }}</a>
                             </li>
 
                         </ul>
