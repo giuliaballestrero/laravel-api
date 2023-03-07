@@ -13,7 +13,7 @@
         Projects in {{$type->name}} type
     </h1> 
 
-    @foreach ($type->projects as $project)
+    @forelse ($type->projects as $project)
         
 
     <div class="card text-center mb-4">
@@ -45,7 +45,12 @@
         <div class="card-footer text-muted">
             Created on {{ $project->creation_date }} - Proj. id: {{ $project->slug }}
         </div>
-    </div>    
-    @endforeach
+    </div>
+    @empty
+    <div class="py-5">
+        <h5>No projects to show.</h5>
+    </div>
+
+    @endforelse
 </div>
 @endsection

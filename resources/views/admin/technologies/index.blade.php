@@ -25,7 +25,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Text Color</th>
                     <th scope="col">Background Color</th>
-                    <th class="text-center" scope="col">Number of projects</th>
+                    <th class="text-center" scope="col">Number of Projects</th>
                     <th class="text-center" scope="col">Actions</th>
                 </tr>
             </thead>

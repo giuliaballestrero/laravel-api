@@ -13,9 +13,8 @@
         Projects in {{$technology->name}} Technology
     </h1> 
 
-    @foreach ($technology->projects as $project)
+    @forelse ($technology->projects as $project)
         
-
     <div class="card text-center mb-4">
         <div class="card-header text-light fs-5">
             Author: <span class="fw-bold">{{ Auth::user()->name }} </span>
@@ -45,6 +44,11 @@
             Created on {{ $project->creation_date }} - Proj. id: {{ $project->slug }}
         </div>
     </div>    
-    @endforeach
+    @empty
+    <div class="py-5">
+        <h5>No projects to show.</h5>
+    </div>
+
+    @endforelse
 </div>
 @endsection

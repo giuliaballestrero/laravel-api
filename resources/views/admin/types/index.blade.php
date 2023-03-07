@@ -24,6 +24,7 @@
                     <th scope="col">#id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Color</th>
+                    <th class="text-center" scope="col">Number of Projects</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -32,7 +33,8 @@
                     <tr>
                         <td>{{ $type->id }}</td>
                         <td>{{ $type->name }}</td>
-                        <td>{{ $type->color }}</td>
+                        <td class="text-light" style="background-color: {{ $type->color }}">{{ $type->color }}</td>
+                        <td class="text-center">{{ count($type->projects) }}</td>
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('admin.types.show', $type->id) }}"
