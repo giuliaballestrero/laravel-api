@@ -54,7 +54,7 @@ class ProjectController extends Controller
         if (Auth::user()->roles()->pluck('id')->contains(1)) {
                 $projects = Project::orderBy('creation_date', 'DESC')->paginate(10);
             } else {
-                $projects = Project::where('user_id', Auth::user()->id)->orderBy('creation_date', 'DESC')->paginate(10);
+                $projects = Project::where('author', Auth::user()->name)->orderBy('creation_date', 'DESC')->paginate(10);
             }
         
         return view('admin.projects.index', compact('projects'));

@@ -22,6 +22,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject = new Project();
             $newProject->type_id = Type::inRandomOrder()->first()->id ;
             $newProject->title = $faker->unique()->realTextBetween(5, 30);
+            $newProject->author = $faker->name();
             $newProject->slug = Str::slug($newProject->title);
             $newProject->description = $faker->realText(100);
             $newProject->thumb = $faker->imageUrl();
